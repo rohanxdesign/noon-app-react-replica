@@ -1,0 +1,36 @@
+.plp {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--colour-neutral-white);
+}
+
+.plp__sticky {
+  flex-shrink: 0;
+}
+
+.plp__scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--space-0) var(--space-16);
+  padding-bottom: var(--space-16);
+  -webkit-overflow-scrolling: touch;
+}
+
+.plp__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+/* Framer Motion wrapper needs to fill the grid cell */
+.plp__grid > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.plp__grid > * > .product-card {
+  flex: 1;
+}

@@ -1,0 +1,144 @@
+.bottom-nav {
+  flex-shrink: 0;
+  width: 100%;
+  background: var(--colour-neutral-white);
+  box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 -4px 4.5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* ── Items row ─────────────────────────────────────── */
+.bottom-nav__items {
+  height: 63px;
+  display: flex;
+  align-items: stretch;
+}
+
+.bottom-nav__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Active top pill ───────────────────────────────── */
+.bottom-nav__indicator {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 43px;
+  height: 4px;
+  border-radius: 0 0 8px 8px;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.bottom-nav__item--active .bottom-nav__indicator {
+  background: #0F61FF;
+}
+
+/* ── Labels ────────────────────────────────────────── */
+.bottom-nav__label {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 500;
+  color: #475067;
+  line-height: 20px;
+  letter-spacing: -0.16px;
+  white-space: nowrap;
+}
+
+.bottom-nav__item--active .bottom-nav__label {
+  color: #0F61FF;
+  font-weight: 700;
+}
+
+/* ── Icons ─────────────────────────────────────── */
+.bottom-nav__icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ── Centre logo ───────────────────────────────────── */
+.bottom-nav__logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav__logo-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-rounded);
+  background: #cecff8;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav__logo-img {
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  top: -2px;
+  left: -8.5px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ── Cart badge ────────────────────────────────────── */
+.bottom-nav__cart-wrap {
+  position: relative;
+}
+
+.bottom-nav__badge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: var(--color-surface-error-bold);
+  color: var(--colour-neutral-white);
+  font-family: var(--font-primary);
+  font-size: 9px;
+  font-weight: 700;
+  min-width: 16px;
+  height: 16px;
+  border-radius: var(--radius-rounded);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  border: 1.5px solid var(--colour-neutral-white);
+}
+
+/* ── iOS home indicator ────────────────────────────── */
+.bottom-nav__home-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 0 8px;
+  background: var(--colour-neutral-white);
+}
+
+.bottom-nav__home-indicator {
+  width: 124px;
+  height: 5px;
+  border-radius: 8px;
+  background: #404553;
+}

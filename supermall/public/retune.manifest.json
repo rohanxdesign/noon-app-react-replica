@@ -1,0 +1,472 @@
+{
+  "version": 2,
+  "tokens": {
+    "typography": {
+      "font-primary": {
+        "value": "'Noontree', system-ui, sans-serif",
+        "variable": "--font-primary"
+      },
+      "text-h40-size": {
+        "value": "40px",
+        "variable": "--text-h40-size"
+      },
+      "text-h40-lh": {
+        "value": "48px",
+        "variable": "--text-h40-lh"
+      },
+      "text-h40-ls": {
+        "value": "-0.25px",
+        "variable": "--text-h40-ls"
+      },
+      "text-h32-size": {
+        "value": "32px",
+        "variable": "--text-h32-size"
+      },
+      "text-h32-lh": {
+        "value": "40px",
+        "variable": "--text-h32-lh"
+      },
+      "text-h32-ls": {
+        "value": "-0.25px",
+        "variable": "--text-h32-ls"
+      },
+      "text-h28-size": {
+        "value": "28px",
+        "variable": "--text-h28-size"
+      },
+      "text-h28-lh": {
+        "value": "36px",
+        "variable": "--text-h28-lh"
+      },
+      "text-h28-ls": {
+        "value": "-0.25px",
+        "variable": "--text-h28-ls"
+      },
+      "text-h24-size": {
+        "value": "24px",
+        "variable": "--text-h24-size"
+      },
+      "text-h24-lh": {
+        "value": "32px",
+        "variable": "--text-h24-lh"
+      },
+      "text-h24-ls": {
+        "value": "-0.25px",
+        "variable": "--text-h24-ls"
+      },
+      "text-h20-size": {
+        "value": "20px",
+        "variable": "--text-h20-size"
+      },
+      "text-h20-lh": {
+        "value": "28px",
+        "variable": "--text-h20-lh"
+      },
+      "text-h20-ls": {
+        "value": "-0.25px",
+        "variable": "--text-h20-ls"
+      },
+      "text-h18-size": {
+        "value": "18px",
+        "variable": "--text-h18-size"
+      },
+      "text-h18-lh": {
+        "value": "24px",
+        "variable": "--text-h18-lh"
+      },
+      "text-h18-ls": {
+        "value": "-0.15px",
+        "variable": "--text-h18-ls"
+      },
+      "text-h16-size": {
+        "value": "16px",
+        "variable": "--text-h16-size"
+      },
+      "text-h16-lh": {
+        "value": "20px",
+        "variable": "--text-h16-lh"
+      },
+      "text-h16-ls": {
+        "value": "-0.15px",
+        "variable": "--text-h16-ls"
+      },
+      "text-b16-size": {
+        "value": "16px",
+        "variable": "--text-b16-size"
+      },
+      "text-b16-lh": {
+        "value": "20px",
+        "variable": "--text-b16-lh"
+      },
+      "text-b16-ls": {
+        "value": "-0.15px",
+        "variable": "--text-b16-ls"
+      },
+      "text-b14-size": {
+        "value": "14px",
+        "variable": "--text-b14-size"
+      },
+      "text-b14-lh": {
+        "value": "18px",
+        "variable": "--text-b14-lh"
+      },
+      "text-b14-ls": {
+        "value": "-0.10px",
+        "variable": "--text-b14-ls"
+      },
+      "text-b12-size": {
+        "value": "12px",
+        "variable": "--text-b12-size"
+      },
+      "text-b12-lh": {
+        "value": "16px",
+        "variable": "--text-b12-lh"
+      },
+      "text-b12-ls": {
+        "value": "-0.10px",
+        "variable": "--text-b12-ls"
+      },
+      "text-b11-size": {
+        "value": "11px",
+        "variable": "--text-b11-size"
+      },
+      "text-b11-lh": {
+        "value": "14px",
+        "variable": "--text-b11-lh"
+      },
+      "text-b11-ls": {
+        "value": "-0.10px",
+        "variable": "--text-b11-ls"
+      },
+      "text-a17-size": {
+        "value": "17px",
+        "variable": "--text-a17-size"
+      },
+      "text-a17-lh": {
+        "value": "24px",
+        "variable": "--text-a17-lh"
+      },
+      "text-a17-ls": {
+        "value": "-0.25px",
+        "variable": "--text-a17-ls"
+      },
+      "text-a16-size": {
+        "value": "16px",
+        "variable": "--text-a16-size"
+      },
+      "text-a16-lh": {
+        "value": "24px",
+        "variable": "--text-a16-lh"
+      },
+      "text-a16-ls": {
+        "value": "0px",
+        "variable": "--text-a16-ls"
+      },
+      "text-a14-size": {
+        "value": "14px",
+        "variable": "--text-a14-size"
+      },
+      "text-a14-lh": {
+        "value": "20px",
+        "variable": "--text-a14-lh"
+      },
+      "text-a14-ls": {
+        "value": "0px",
+        "variable": "--text-a14-ls"
+      },
+      "text-a12-size": {
+        "value": "12px",
+        "variable": "--text-a12-size"
+      },
+      "text-a12-lh": {
+        "value": "16px",
+        "variable": "--text-a12-lh"
+      },
+      "text-a12-ls": {
+        "value": "0px",
+        "variable": "--text-a12-ls"
+      }
+    },
+    "colors": {
+      "color-text-on-bold": {
+        "value": "#ffffff",
+        "variable": "--color-text-on-bold"
+      },
+      "color-surface-primary": {
+        "value": "#ffffff",
+        "variable": "--color-surface-primary"
+      }
+    },
+    "spacing": {
+      "space-0": {
+        "value": "0px",
+        "variable": "--space-0"
+      },
+      "space-1": {
+        "value": "1px",
+        "variable": "--space-1"
+      },
+      "space-2": {
+        "value": "2px",
+        "variable": "--space-2"
+      },
+      "space-4": {
+        "value": "4px",
+        "variable": "--space-4"
+      },
+      "space-6": {
+        "value": "6px",
+        "variable": "--space-6"
+      },
+      "space-8": {
+        "value": "8px",
+        "variable": "--space-8"
+      },
+      "space-10": {
+        "value": "10px",
+        "variable": "--space-10"
+      },
+      "space-12": {
+        "value": "12px",
+        "variable": "--space-12"
+      },
+      "space-14": {
+        "value": "14px",
+        "variable": "--space-14"
+      },
+      "space-16": {
+        "value": "16px",
+        "variable": "--space-16"
+      },
+      "space-18": {
+        "value": "18px",
+        "variable": "--space-18"
+      },
+      "space-20": {
+        "value": "20px",
+        "variable": "--space-20"
+      },
+      "space-24": {
+        "value": "24px",
+        "variable": "--space-24"
+      },
+      "space-28": {
+        "value": "28px",
+        "variable": "--space-28"
+      },
+      "space-32": {
+        "value": "32px",
+        "variable": "--space-32"
+      },
+      "space-36": {
+        "value": "36px",
+        "variable": "--space-36"
+      },
+      "space-40": {
+        "value": "40px",
+        "variable": "--space-40"
+      },
+      "space-44": {
+        "value": "44px",
+        "variable": "--space-44"
+      },
+      "space-48": {
+        "value": "48px",
+        "variable": "--space-48"
+      },
+      "space-52": {
+        "value": "52px",
+        "variable": "--space-52"
+      },
+      "space-56": {
+        "value": "56px",
+        "variable": "--space-56"
+      },
+      "space-60": {
+        "value": "60px",
+        "variable": "--space-60"
+      },
+      "space-64": {
+        "value": "64px",
+        "variable": "--space-64"
+      },
+      "space-72": {
+        "value": "72px",
+        "variable": "--space-72"
+      },
+      "space-80": {
+        "value": "80px",
+        "variable": "--space-80"
+      },
+      "space-88": {
+        "value": "88px",
+        "variable": "--space-88"
+      },
+      "space-96": {
+        "value": "96px",
+        "variable": "--space-96"
+      },
+      "space-128": {
+        "value": "128px",
+        "variable": "--space-128"
+      }
+    },
+    "colors": {
+      "supermall-800": { "value": "var(--supermall-800)", "variable": "--supermall-800" },
+      "supermall-400": { "value": "var(--supermall-400)", "variable": "--supermall-400" },
+      "grey-500": { "value": "var(--grey-500)", "variable": "--grey-500" },
+      "grey-700": { "value": "var(--grey-700)", "variable": "--grey-700" },
+      "grey-800": { "value": "var(--grey-800)", "variable": "--grey-800" },
+      "grey-900": { "value": "var(--grey-900)", "variable": "--grey-900" },
+      "colour-neutral-white": { "value": "#ffffff", "variable": "--colour-neutral-white" },
+      "colour-neutral-black": { "value": "#000000", "variable": "--colour-neutral-black" },
+      "color-surface-secondary": { "value": "var(--color-surface-secondary)", "variable": "--color-surface-secondary" },
+      "color-surface-supermall-bold": { "value": "var(--color-surface-supermall-bold)", "variable": "--color-surface-supermall-bold" },
+      "color-text-primary": { "value": "var(--color-text-primary)", "variable": "--color-text-primary" },
+      "color-text-tertiary": { "value": "var(--color-text-tertiary)", "variable": "--color-text-tertiary" },
+      "color-border-subtle": { "value": "var(--color-border-subtle)", "variable": "--color-border-subtle" },
+      "alpha-light-16": { "value": "var(--alpha-light-16)", "variable": "--alpha-light-16" },
+      "alpha-light-24": { "value": "var(--alpha-light-24)", "variable": "--alpha-light-24" }
+    },
+    "radii": {
+      "radius-2": {
+
+        "value": "2px",
+        "variable": "--radius-2"
+      },
+      "radius-4": {
+        "value": "4px",
+        "variable": "--radius-4"
+      },
+      "radius-6": {
+        "value": "6px",
+        "variable": "--radius-6"
+      },
+      "radius-8": {
+        "value": "8px",
+        "variable": "--radius-8"
+      },
+      "radius-10": {
+        "value": "10px",
+        "variable": "--radius-10"
+      },
+      "radius-12": {
+        "value": "12px",
+        "variable": "--radius-12"
+      },
+      "radius-14": {
+        "value": "14px",
+        "variable": "--radius-14"
+      },
+      "radius-16": {
+        "value": "16px",
+        "variable": "--radius-16"
+      },
+      "radius-18": {
+        "value": "18px",
+        "variable": "--radius-18"
+      },
+      "radius-20": {
+        "value": "20px",
+        "variable": "--radius-20"
+      },
+      "radius-24": {
+        "value": "24px",
+        "variable": "--radius-24"
+      },
+      "radius-28": {
+        "value": "28px",
+        "variable": "--radius-28"
+      },
+      "radius-32": {
+        "value": "32px",
+        "variable": "--radius-32"
+      },
+      "radius-36": {
+        "value": "36px",
+        "variable": "--radius-36"
+      },
+      "radius-40": {
+        "value": "40px",
+        "variable": "--radius-40"
+      },
+      "radius-rounded": {
+        "value": "9999px",
+        "variable": "--radius-rounded"
+      }
+    }
+  },
+  "components": {
+    "ProductCard": {
+      "path": "src/components/ui/ProductCard/ProductCard.tsx",
+      "description": "Product listing card. Shows product image, tag (bestseller/new/hot/sale), wishlist toggle, ATC button, name, variant, rating, price, discount, and optional deal badge.",
+      "props": {
+        "product": {
+          "type": "Product",
+          "required": true,
+          "description": "Product data object (id, name, variant, images, sellingPrice, originalPrice, currency, rating, reviewCount, tag, deal, isSponsored)"
+        }
+      },
+      "states": {
+        "idle": "ATC not in cart — shows plus button (36×36, white bg, 1.2px supermall-800 border)",
+        "inCart": "ATC active — expands to 96×36, supermall-800 bg, shows trash/minus + count + plus"
+      },
+      "css": "src/components/ui/ProductCard/ProductCard.css",
+      "notes": "Card height is determined by the taller card in a two-column grid row. Aspect ratio of image wrap is 133/179. Border is #f9f9fb."
+    },
+    "AddToCart": {
+      "path": "src/components/ui/AddToCart/AddToCart.tsx",
+      "description": "Animated add-to-cart control. Idles as a 36×36 plus button; expands to 96×36 stepper with trash/minus, count, and plus when quantity > 0.",
+      "props": {
+        "count": { "type": "number", "required": true, "description": "Current cart quantity for this item" },
+        "onAdd": { "type": "() => void", "required": true },
+        "onRemove": { "type": "() => void", "required": true }
+      },
+      "css": "src/components/ui/AddToCart/AddToCart.css"
+    },
+    "CategoryTabs": {
+      "path": "src/pages/PLP/components/CategoryTabs.tsx",
+      "description": "Horizontally scrollable category tab strip. Each tab is 74px wide with a 48×48 image and 2-line label. Active tab gets a vertical gradient background and bordered image wrap.",
+      "props": {
+        "categories": { "type": "Category[]", "required": true },
+        "activeId": { "type": "string", "required": true },
+        "onSelect": { "type": "(id: string) => void", "required": true }
+      },
+      "states": {
+        "inactive": "Grey-700 label, color-surface-secondary image bg, subtle inset shadow",
+        "active": "Supermall-800 label (600 weight), white image bg, supermall-400 border, linear-gradient(180deg, rgb(224,224,255) 0%, transparent 100%) item bg"
+      },
+      "css": "src/pages/PLP/components/CategoryTabs.css"
+    },
+    "FilterBar": {
+      "path": "src/pages/PLP/components/FilterBar.tsx",
+      "description": "Horizontally scrollable filter/sort chip bar. Chips: Filter (filter icon), Sort (sort icon), Brand (chevron), Type (chevron).",
+      "props": {
+        "activeFilters": { "type": "string[]", "required": false, "default": "[]" },
+        "onChipClick": { "type": "(id: string) => void", "required": false }
+      },
+      "css": "src/pages/PLP/components/FilterBar.css"
+    },
+    "PLPHeader": {
+      "path": "src/pages/PLP/components/PLPHeader.tsx",
+      "description": "Page header for PLP. Back chevron on left, title centred, search icon on right.",
+      "props": {
+        "title": { "type": "string", "required": true }
+      },
+      "css": "src/pages/PLP/components/PLPHeader.css"
+    },
+    "BottomNav": {
+      "path": "src/components/layout/BottomNav.tsx",
+      "description": "Fixed bottom navigation bar with 5 slots: Home, Categories, Supermall logo (centre), Account, Cart. Active state uses supermall-800 icon colour. Cart shows badge when itemCount > 0.",
+      "props": {},
+      "css": "src/components/layout/BottomNav.css"
+    },
+    "PLPPage": {
+      "path": "src/pages/PLP/index.tsx",
+      "description": "Product listing page. Composes PLPHeader, CategoryTabs, FilterBar, and a 2-column ProductCard grid with stagger animation.",
+      "props": {},
+      "css": "src/pages/PLP/PLP.css",
+      "notes": "Background is white (--colour-neutral-white). Grid uses CSS Grid 2 columns with equal row heights via flex stretch."
+    }
+  }
+}

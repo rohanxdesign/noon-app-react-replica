@@ -1,0 +1,104 @@
+.account-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background: var(--grey-100, #f9f9fb);
+  overflow: hidden;
+}
+
+.account-page__iframe {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: var(--grey-100, #f9f9fb);
+  opacity: 0;
+  transition: opacity 220ms ease-out;
+}
+
+.account-page__iframe--ready {
+  opacity: 1;
+}
+
+/* Skeleton overlay — sits on top of the iframe and fades out once the
+   iframe signals it's loaded (or the 1.4s safety timeout fires). The
+   layout mirrors the AccountsPage frame so the transition reads as a
+   skeleton-of-the-same-page rather than a generic spinner. */
+.account-skeleton {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  background: var(--grey-100, #f9f9fb);
+  opacity: 1;
+  transition: opacity 260ms ease-out;
+}
+
+.account-skeleton--hidden {
+  opacity: 0;
+}
+
+.account-skeleton__frame {
+  width: 375px;
+  height: 812px;
+  padding: 60px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Generic shimmer block */
+.skel-block {
+  background: linear-gradient(
+    90deg,
+    var(--grey-200, #f2f3f7) 0%,
+    var(--grey-300, #eaecf0) 50%,
+    var(--grey-200, #f2f3f7) 100%
+  );
+  background-size: 200% 100%;
+  animation: skel-shimmer 1.2s ease-in-out infinite;
+  border-radius: 12px;
+}
+
+@keyframes skel-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Top profile card — avatar circle + 2 text lines + edit chip */
+.skel-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 12px;
+}
+.skel-profile__avatar { width: 44px; height: 44px; border-radius: 50%; }
+.skel-profile__lines  { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.skel-profile__line-1 { height: 14px; width: 60%; border-radius: 6px; }
+.skel-profile__line-2 { height: 10px; width: 80%; border-radius: 6px; }
+.skel-profile__edit   { width: 36px; height: 36px; border-radius: 50%; }
+
+/* Yellow banner placeholder */
+.skel-banner { height: 66px; border-radius: 16px; }
+
+/* Two square tiles row */
+.skel-tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.skel-tile { height: 136px; border-radius: 12px; }
+
+/* Credits row */
+.skel-credits { height: 56px; border-radius: 12px; }
+
+/* Card carousel placeholder */
+.skel-carousel { height: 140px; border-radius: 12px; }
+
+/* Menu cards (3 of them) */
+.skel-menu { height: 134px; border-radius: 16px; }
+.skel-menu--short { height: 90px; }
