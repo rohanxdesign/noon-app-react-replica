@@ -1,7 +1,7 @@
-import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useCartStore } from '../../../store/cartStore';
+import { useWishlistStore } from '../../../store/wishlistStore';
 import type { Product } from '../../../types/product';
 import { AddToCart } from '../AddToCart/AddToCart';
 import { HeartOutline, HeartFilled, StarFilled, MoonIcon } from '../icons';
@@ -23,8 +23,9 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const navigate = useNavigate();
   const location = useLocation();
-  const [wishlisted, setWishlisted] = useState(false);
-  const [imgIndex] = useState(0);
+  const openWishlist = useWishlistStore((s) => s.openDrawer);
+  const wishlisted = useWishlistStore((s) => s.wishlistedIds.has(product.id));
+  const imgIndex = 0;
 
   const addItem    = useCartStore((s) => s.addItem);
   const removeItem = useCartStore((s) => s.removeItem);
@@ -90,7 +91,10 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Wishlist */}
         <motion.button
           className="product-card__wishlist"
-          onClick={() => { setWishlisted((w) => !w); }}
+          onClick={(e) => {
+            e.stopPropagation();
+            openWishlist(product.id, product.images[imgIndex]);
+          }}
           whileTap={{ scale: 0.85 }}
           aria-label={wishlisted ? 'Remove from wishlist' : 'Add to wishlist'}
         >

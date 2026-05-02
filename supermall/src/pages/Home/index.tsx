@@ -502,8 +502,98 @@ function ShopByCategory() {
   );
 }
 
+function SkelBlock({ className, style }: { className?: string; style?: React.CSSProperties }) {
+  return <span className={`home-skel ${className ?? ''}`} style={style} />;
+}
+
+function HomeSkeleton() {
+  return (
+    <div className="home-page home-page--loading" aria-busy="true" aria-label="Loading homepage">
+      <section className="home-top home-skel-top" aria-hidden="true">
+        <div className="home-skel-services">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <SkelBlock key={i} className="home-skel-service" />
+          ))}
+        </div>
+        <div className="home-skel-delivery">
+          <SkelBlock className="home-skel-line" style={{ width: '40%' }} />
+          <SkelBlock className="home-skel-line" style={{ width: '70%' }} />
+        </div>
+        <SkelBlock className="home-skel-search" />
+        <div className="home-skel-tabs">
+          {Array.from({ length: 7 }).map((_, i) => (
+            <SkelBlock key={i} className="home-skel-tab" />
+          ))}
+        </div>
+      </section>
+
+      <section className="home-skel-hero" aria-hidden="true">
+        <SkelBlock className="home-skel-headline" />
+        <div className="home-skel-hero-rail">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <SkelBlock key={i} className="home-skel-hero-card" />
+          ))}
+        </div>
+      </section>
+
+      {Array.from({ length: 2 }).map((_, railIndex) => (
+        <section className="home-skel-rail" key={railIndex} aria-hidden="true">
+          <div className="home-skel-rail-header">
+            <SkelBlock className="home-skel-rail-title" />
+            <SkelBlock className="home-skel-rail-link" />
+          </div>
+          <div className="home-skel-products">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div className="home-skel-product" key={i}>
+                <SkelBlock className="home-skel-product-img" />
+                <SkelBlock className="home-skel-line" style={{ width: '85%' }} />
+                <SkelBlock className="home-skel-line" style={{ width: '60%' }} />
+                <SkelBlock className="home-skel-line" style={{ width: '40%' }} />
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <section className="home-skel-shop" aria-hidden="true">
+        <div className="home-skel-rail-header">
+          <SkelBlock className="home-skel-rail-title" />
+          <SkelBlock className="home-skel-rail-link" />
+        </div>
+        <div className="home-skel-shop-filters">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <SkelBlock key={i} className="home-skel-shop-filter" />
+          ))}
+        </div>
+        <div className="home-skel-shop-grid">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <div className="home-skel-shop-cell" key={i}>
+              <SkelBlock className="home-skel-shop-img" />
+              <SkelBlock className="home-skel-line" style={{ width: '70%' }} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState<TopTab>('All');
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoading(false), 1500);
+    return () => clearTimeout(t);
+  }, []);
+
+  if (loading) {
+    return (
+      <PageTransition>
+        <HomeSkeleton />
+      </PageTransition>
+    );
+  }
 
   return (
     <PageTransition>

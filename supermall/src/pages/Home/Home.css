@@ -767,3 +767,167 @@
   height: 179px;
   aspect-ratio: auto;
 }
+
+/* ─── Loading skeleton ─────────────────────────────────────────────────────── */
+@keyframes home-skel-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.home-skel {
+  display: block;
+  background: linear-gradient(
+    90deg,
+    var(--grey-200) 0%,
+    var(--grey-100) 40%,
+    var(--grey-200) 80%
+  );
+  background-size: 200% 100%;
+  animation: home-skel-shimmer 1.4s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+.home-skel-top {
+  padding-bottom: 12px;
+}
+.home-skel-top .home-skel {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.10) 0%,
+    rgba(255,255,255,0.22) 40%,
+    rgba(255,255,255,0.10) 80%
+  );
+  background-size: 200% 100%;
+}
+
+.home-skel-services {
+  display: flex;
+  gap: 6px;
+  padding: 20px 12px 0;
+}
+.home-skel-service {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 76px;
+  border-radius: 20px;
+}
+
+.home-skel-delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 16px 0;
+}
+.home-skel-line {
+  height: 12px;
+  border-radius: 6px;
+}
+
+.home-skel-search {
+  height: 44px;
+  margin: 16px 16px 0;
+  border-radius: 12px;
+}
+
+.home-skel-tabs {
+  display: flex;
+  gap: 16px;
+  padding: 16px 16px 0;
+  overflow: hidden;
+}
+.home-skel-tab {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: 14px;
+}
+
+.home-skel-hero {
+  padding: 16px;
+}
+.home-skel-headline {
+  height: 28px;
+  width: 60%;
+  margin: 0 auto 16px;
+  border-radius: 8px;
+}
+.home-skel-hero-rail {
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+}
+.home-skel-hero-card {
+  flex: 1 1 0;
+  height: 96px;
+  border-radius: 12px;
+}
+
+.home-skel-rail,
+.home-skel-shop {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.home-skel-rail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home-skel-rail-title {
+  height: 18px;
+  width: 40%;
+  border-radius: 6px;
+}
+.home-skel-rail-link {
+  height: 14px;
+  width: 56px;
+  border-radius: 6px;
+}
+
+.home-skel-products {
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+}
+.home-skel-product {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.home-skel-product-img {
+  width: 100%;
+  height: 179px;
+  border-radius: 12px;
+}
+
+.home-skel-shop-filters {
+  display: flex;
+  gap: 8px;
+  overflow: hidden;
+}
+.home-skel-shop-filter {
+  height: 36px;
+  width: 88px;
+  flex: 0 0 88px;
+  border-radius: 18px;
+}
+
+.home-skel-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.home-skel-shop-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.home-skel-shop-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}

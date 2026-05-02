@@ -3,6 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Retune } from 'retune';
 import { BottomNav } from './BottomNav';
+import { WishlistOverlay } from './WishlistOverlay';
+import { useWishlistStore } from '../../store/wishlistStore';
 
 export function RootLayout() {
   const location = useLocation();
@@ -18,6 +20,8 @@ export function RootLayout() {
     if (location.pathname !== '/account') setNoonOneShowsNav(true);
   }, [location.pathname]);
 
+  const openFullWishlist = useWishlistStore((s) => s.openFullWishlist);
+
   useEffect(() => {
     const handler = (e: MessageEvent) => {
       if (
@@ -27,10 +31,17 @@ export function RootLayout() {
       ) {
         setNoonOneShowsNav(e.data.showHostNav);
       }
+      if (
+        e.data &&
+        e.data.source === 'noon-one' &&
+        e.data.action === 'open-wishlist'
+      ) {
+        openFullWishlist();
+      }
     };
     window.addEventListener('message', handler);
     return () => window.removeEventListener('message', handler);
-  }, []);
+  }, [openFullWishlist]);
 
   // PDP hides the nav so the sticky add-to-cart can sit at the bottom.
   // On /account the iframe drives visibility — nav stays for the
@@ -48,6 +59,7 @@ export function RootLayout() {
         </AnimatePresence>
       </main>
       {!hideBottomNav && <BottomNav />}
+      <WishlistOverlay />
       <Retune />
     </div>
   );

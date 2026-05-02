@@ -614,7 +614,16 @@ export default function AccountsPage({
                 rightMidImage={productIphone}
               />
             </SmoothCorners>
-            <SmoothCorners radius={12} className="bg-white rounded-[12px] flex flex-col px-[12px] py-[12px] gap-[12px] h-[136px] cursor-pointer items-center justify-center">
+            <SmoothCorners
+              radius={12}
+              onClick={() =>
+                window.parent?.postMessage(
+                  { source: 'noon-one', action: 'open-wishlist' },
+                  '*',
+                )
+              }
+              className="bg-white rounded-[12px] flex flex-col px-[12px] py-[12px] gap-[12px] h-[136px] cursor-pointer items-center justify-center"
+            >
               <div className="flex flex-col gap-[2px] items-start w-full">
                 <p className="font-bold text-[16px] leading-[20px] tracking-[-0.16px]" style={{ color: T.color.text.heading }}>
                   My Wishlist
