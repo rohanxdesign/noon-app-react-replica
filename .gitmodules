@@ -1,0 +1,4 @@
+[submodule "noon-wishlist-react-native"]
+	path = noon-wishlist-react-native
+	url = git@github.com:rohanxdesign/noon-wishlist-react-native.git
+	branch = main
