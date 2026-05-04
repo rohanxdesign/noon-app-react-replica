@@ -1,4 +1,5 @@
 .bottom-nav {
+  --bottom-nav-height: 88px; /* 63px items row + 25px home indicator */
   flex-shrink: 0;
   width: 100%;
   background: var(--colour-neutral-white);
@@ -6,6 +7,18 @@
   display: flex;
   flex-direction: column;
   z-index: 100;
+  transform: translateY(0);
+  margin-bottom: 0;
+  transition:
+    transform     0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform, margin-bottom;
+}
+/* Hidden state: slide off-screen AND collapse the flex slot
+   so the page above grows into the freed space (no white gap). */
+.bottom-nav--hidden {
+  transform: translateY(100%);
+  margin-bottom: calc(-1 * var(--bottom-nav-height));
 }
 
 /* ── Items row ─────────────────────────────────────── */

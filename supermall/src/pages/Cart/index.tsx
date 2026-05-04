@@ -6,12 +6,13 @@ import './Cart.css';
 
 /* ── Cart assets (downloaded from Figma) ──────────────────────────────────── */
 import IMG_PRODUCT from '../../assets/cart/product.png';
-import IMG_COUPON from '../../assets/cart/coupon.svg';
 import IMG_FULFIL_BG from '../../assets/cart/fulfil-bg.svg';
-import IMG_SUPERMALL_A from '../../assets/cart/supermall-a.svg';
-import IMG_SUPERMALL_B from '../../assets/cart/supermall-b.svg';
+import IMG_SUPERMALL_PILL from '../../assets/cart/supermall-pill.png';
 import IMG_EXPRESS_BG from '../../assets/cart/express-bg.svg';
 import IMG_EXPRESS_FG from '../../assets/cart/express-fg.svg';
+import IMG_DOOR from '../../assets/cart/door.png';
+import IMG_RECEIVER_AVATAR from '../../assets/cart/receiver-avatar.png';
+import IMG_NOON_ONE_BADGE from '../../assets/cart/noon-one-badge.png';
 import IMG_VISA from '../../assets/cart/visa.png';
 import IMG_NOON_CARD from '../../assets/cart/noon-card.png';
 import IMG_SAVINGS_WAVE from '../../assets/cart/savings-wave.svg';
@@ -97,7 +98,7 @@ function NoonOnePill() {
   return (
     <span className="cart-noon-pill">
       <span className="cart-noon-pill__word">noon</span>
-      <span className="cart-noon-pill__one">one</span>
+      <img src={IMG_NOON_ONE_BADGE} alt="one" className="cart-noon-pill__one-img" />
     </span>
   );
 }
@@ -113,13 +114,7 @@ function BoxStackIcon() {
   );
 }
 function DoorIcon() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <rect x="5" y="3" width="14" height="18" rx="1.5" fill="#DBE5FF" stroke="#1A4FFF" strokeWidth="1.6"/>
-      <path d="M9 3v18" stroke="#1A4FFF" strokeWidth="1.4"/>
-      <circle cx="15" cy="12.5" r="1.1" fill="#1A4FFF"/>
-    </svg>
-  );
+  return <img src={IMG_DOOR} alt="" className="cart-instr__icon-img" />;
 }
 
 /* ── Header back chevron + status icons ───────────────────────────────────── */
@@ -227,8 +222,7 @@ const shipments: Shipment[] = [
 function SupermallPill() {
   return (
     <span className="cart-pill cart-pill--supermall">
-      <img src={IMG_SUPERMALL_A} alt="" className="cart-pill__a" />
-      <img src={IMG_SUPERMALL_B} alt="" className="cart-pill__b" />
+      <img src={IMG_SUPERMALL_PILL} alt="supermall" />
     </span>
   );
 }
@@ -269,12 +263,6 @@ function ShipmentCard({ shipment, index }: { shipment: Shipment; index: number }
               <span className="cart-item__strike">{SAR}{item.oldPrice}</span>
               <span className="cart-item__off">{item.discountPct}% OFF</span>
             </div>
-            {item.discountAmt && (
-              <div className="cart-item__warranty">
-                <img src={IMG_COUPON} alt="" className="cart-item__warranty-icon" />
-                <span>Discount {SAR}{item.discountAmt}.00</span>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -348,7 +336,9 @@ function ReceiverDetails() {
     <section className="cart-card cart-receiver">
       <h3 className="cart-card__title">Receiver details</h3>
       <div className="cart-receiver__row">
-        <div className="cart-receiver__avatar" aria-hidden>📞</div>
+        <div className="cart-receiver__avatar" aria-hidden>
+          <img src={IMG_RECEIVER_AVATAR} alt="" />
+        </div>
         <div className="cart-receiver__info">
           <p className="cart-receiver__name">Rahul Jaiswal</p>
           <p className="cart-receiver__phone">+96872347847</p>
@@ -690,7 +680,7 @@ export default function CartPage() {
             <div className="cart-header__center">
               <span className="cart-header__addr-row">
                 <span className="cart-header__addr-label">Delivering to Home</span>
-                <ChevronDown size={12} color="var(--grey-900)" />
+                <ChevronDown size={16} color="var(--grey-900)" />
               </span>
               <span className="cart-header__addr-text">
                 Villa 52, Springville, K. VGP Layout, Mh…

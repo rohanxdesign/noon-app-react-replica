@@ -1,6 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import { useCartStore } from '../../store/cartStore';
 import './BottomNav.css';
+
+// Auto-hide thresholds
+const HIDE_AFTER_PX  = 24; // ignore tiny taps; only hide once we've scrolled past this
+const DELTA_PX       = 6;  // direction-change deadband to avoid flicker
 
 const IMG_SUPERMALL_LOGO = 'https://www.figma.com/api/mcp/asset/4928877e-20eb-4845-acfe-715ebec66497';
 
@@ -67,9 +72,56 @@ function CartIcon({ active }: { active: boolean }) {
 
 export function BottomNav() {
   const itemCount = useCartStore((s) => s.itemCount());
+  const location = useLocation();
+  const [hidden, setHidden] = useState(false);
+  // Per-element last scroll position, keyed by element identity.
+  const lastTopsRef = useRef(new WeakMap<Element, number>());
+
+  // Reset visibility whenever the route changes (each page mounts a fresh
+  // scroll container at the top).
+  useEffect(() => {
+    setHidden(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    let ticking = false;
+
+    function onScroll(e: Event) {
+      const target = e.target as Element | null;
+      if (!target || target.nodeType !== 1) return;
+      const top =
+        (target as Element & { scrollTop?: number }).scrollTop ??
+        (target as unknown as Document).documentElement?.scrollTop ??
+        0;
+      const lastTops = lastTopsRef.current;
+      const last = lastTops.get(target) ?? 0;
+      const dy = top - last;
+
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          if (Math.abs(dy) > DELTA_PX) {
+            if (dy > 0 && top > HIDE_AFTER_PX) setHidden(true);
+            else if (dy < 0) setHidden(false);
+            lastTops.set(target, top);
+          } else if (top <= HIDE_AFTER_PX) {
+            // Always reveal when near the top.
+            setHidden(false);
+            lastTops.set(target, top);
+          }
+          ticking = false;
+        });
+      }
+    }
+
+    // Scroll events don't bubble — capture-phase listener catches scrolls
+    // from any nested element (per-page scroll containers).
+    document.addEventListener('scroll', onScroll, true);
+    return () => document.removeEventListener('scroll', onScroll, true);
+  }, []);
 
   return (
-    <nav className="bottom-nav">
+    <nav className={`bottom-nav${hidden ? ' bottom-nav--hidden' : ''}`}>
       <div className="bottom-nav__items">
         <NavLink
           to="/"
