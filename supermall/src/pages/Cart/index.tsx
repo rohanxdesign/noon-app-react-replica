@@ -12,18 +12,141 @@ import IMG_SUPERMALL_A from '../../assets/cart/supermall-a.svg';
 import IMG_SUPERMALL_B from '../../assets/cart/supermall-b.svg';
 import IMG_EXPRESS_BG from '../../assets/cart/express-bg.svg';
 import IMG_EXPRESS_FG from '../../assets/cart/express-fg.svg';
-import IMG_TABBY from '../../assets/cart/tabby.svg';
-import IMG_TAMARA from '../../assets/cart/tamara.svg';
-import IMG_APPLEPAY from '../../assets/cart/applepay.svg';
 import IMG_VISA from '../../assets/cart/visa.png';
 import IMG_NOON_CARD from '../../assets/cart/noon-card.png';
-import IMG_CASH from '../../assets/cart/cash.svg';
-import IMG_NOON_ONE_LOGO from '../../assets/cart/noon-one-a.svg';
-import IMG_NOON_ONE_LOGO_B from '../../assets/cart/noon-one-b.svg';
-import IMG_NOON_ONE_LOGO_C from '../../assets/cart/noon-one-c.svg';
 import IMG_SAVINGS_WAVE from '../../assets/cart/savings-wave.svg';
-import IMG_DIVIDER from '../../assets/cart/divider.svg';
 import IMG_ARROW from '../../assets/cart/arrow.svg';
+
+/* ── Inline brand wordmarks (the partial Figma SVGs were unusable) ────────── */
+function TabbyLogo() {
+  return (
+    <svg viewBox="0 0 38 24" preserveAspectRatio="xMidYMid meet" aria-label="Tabby">
+      <defs>
+        <linearGradient id="tabby-bg" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#3bffc7" />
+          <stop offset="100%" stopColor="#3bff9e" />
+        </linearGradient>
+      </defs>
+      <rect width="38" height="24" rx="4" fill="url(#tabby-bg)" />
+      <text x="19" y="16" textAnchor="middle"
+        fontFamily="-apple-system, system-ui, sans-serif"
+        fontSize="10" fontWeight="800" fill="#1a1a1a"
+        letterSpacing="-0.3"
+      >tabby</text>
+    </svg>
+  );
+}
+function TamaraLogo() {
+  return (
+    <svg viewBox="0 0 38 24" preserveAspectRatio="xMidYMid meet" aria-label="Tamara">
+      <defs>
+        <linearGradient id="tamara-bg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="#FFB58D" />
+          <stop offset="50%" stopColor="#F7C5DC" />
+          <stop offset="100%" stopColor="#C8A8E9" />
+        </linearGradient>
+      </defs>
+      <rect width="38" height="24" rx="4" fill="url(#tamara-bg)" />
+      <text x="19" y="16" textAnchor="middle"
+        fontFamily="-apple-system, system-ui, sans-serif"
+        fontSize="9" fontWeight="800" fill="#1a1a1a"
+        letterSpacing="-0.2"
+      >tamara</text>
+    </svg>
+  );
+}
+function ApplePayLogo() {
+  return (
+    <svg viewBox="0 0 38 24" preserveAspectRatio="xMidYMid meet" aria-label="Apple Pay">
+      <rect width="38" height="24" rx="4" fill="#000" />
+      {/* Apple logo */}
+      <path d="M11.6 9.5c-.3.4-.8.7-1.3.6-.1-.5.2-1 .5-1.4.3-.4.8-.7 1.3-.7 0 .5-.2 1-.5 1.5zm.5.7c-.7 0-1.3.4-1.7.4-.4 0-.9-.4-1.5-.4-.8 0-1.5.5-1.9 1.2-.8 1.4-.2 3.5.6 4.6.4.6.9 1.2 1.5 1.2.6 0 .8-.4 1.5-.4.7 0 .9.4 1.5.4.6 0 1-.6 1.4-1.2.4-.6.6-1.2.6-1.3-.1 0-1.1-.4-1.1-1.7 0-1 .8-1.5.8-1.5-.5-.6-1.1-.7-1.7-.7z" fill="#fff"/>
+      {/* "Pay" text */}
+      <text x="17" y="16"
+        fontFamily="-apple-system, system-ui, sans-serif"
+        fontSize="10" fontWeight="700" fill="#fff"
+      >Pay</text>
+    </svg>
+  );
+}
+function CardPlaceholderLogo() {
+  return (
+    <svg viewBox="0 0 38 24" aria-hidden>
+      <rect x="0.75" y="0.75" width="36.5" height="22.5" rx="3.25" fill="#f9f9fb" stroke="#5d5d5d" strokeWidth="1.5"/>
+      <text x="19" y="14.5" textAnchor="middle"
+        fontFamily="-apple-system, system-ui, sans-serif"
+        fontSize="6.5" fontWeight="800" fill="#5d5d5d" letterSpacing="0.4"
+      >CARD</text>
+    </svg>
+  );
+}
+function CashLogo() {
+  return (
+    <svg viewBox="0 0 38 24" aria-label="Cash">
+      <rect width="38" height="24" rx="4" fill="#1FAE5C" />
+      <rect x="6" y="7" width="26" height="10" rx="2" fill="#fff" stroke="#0E8B45" strokeWidth="0.8"/>
+      <circle cx="19" cy="12" r="2" fill="#1FAE5C"/>
+      <text x="19" y="22" textAnchor="middle"
+        fontFamily="-apple-system, system-ui, sans-serif"
+        fontSize="3.5" fontWeight="700" fill="#fff"
+      >CASH</text>
+    </svg>
+  );
+}
+function NoonOnePill() {
+  return (
+    <span className="cart-noon-pill">
+      <span className="cart-noon-pill__word">noon</span>
+      <span className="cart-noon-pill__one">one</span>
+    </span>
+  );
+}
+
+/* ── Inline icons for delivery instructions ──────────────────────────────── */
+function BoxStackIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M3 7.5l9-4 9 4v9l-9 4-9-4v-9z" stroke="#E5641A" strokeWidth="1.6" strokeLinejoin="round" fill="#FFE7CD"/>
+      <path d="M3 7.5l9 4 9-4M12 11.5v9" stroke="#E5641A" strokeWidth="1.6" strokeLinejoin="round" fill="none"/>
+      <path d="M7.5 5.25l9 4" stroke="#E5641A" strokeWidth="1.4" strokeLinecap="round" fill="none"/>
+    </svg>
+  );
+}
+function DoorIcon() {
+  return (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="5" y="3" width="14" height="18" rx="1.5" fill="#DBE5FF" stroke="#1A4FFF" strokeWidth="1.6"/>
+      <path d="M9 3v18" stroke="#1A4FFF" strokeWidth="1.4"/>
+      <circle cx="15" cy="12.5" r="1.1" fill="#1A4FFF"/>
+    </svg>
+  );
+}
+
+/* ── Header back chevron + status icons ───────────────────────────────────── */
+function StatusBar() {
+  return (
+    <div className="cart-statusbar" aria-hidden>
+      <span className="cart-statusbar__time">9:41</span>
+      <div className="cart-statusbar__notch" />
+      <div className="cart-statusbar__icons">
+        <svg width="18" height="11" viewBox="0 0 18 11" fill="none">
+          <rect x="1"  y="6"  width="3" height="4" rx="0.5" fill="#000"/>
+          <rect x="5.5" y="4" width="3" height="6" rx="0.5" fill="#000"/>
+          <rect x="10" y="2" width="3" height="8" rx="0.5" fill="#000"/>
+          <rect x="14.5" y="0" width="3" height="10" rx="0.5" fill="#000"/>
+        </svg>
+        <svg width="16" height="11" viewBox="0 0 16 11" fill="none">
+          <path d="M8 3a8 8 0 0 1 5.66 2.34l-.7.7a7 7 0 0 0-9.92 0l-.7-.7A8 8 0 0 1 8 3zm0 3a5 5 0 0 1 3.54 1.46l-.7.71a4 4 0 0 0-5.66 0l-.71-.7A5 5 0 0 1 8 6zm0 3a2 2 0 0 1 1.41.59l-1.4 1.41-1.42-1.41A2 2 0 0 1 8 9z" fill="#000"/>
+        </svg>
+        <svg width="26" height="11" viewBox="0 0 26 11" fill="none">
+          <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" stroke="#000" fill="none"/>
+          <rect x="2"   y="2"   width="18" height="7"  rx="1" fill="#000"/>
+          <rect x="23"  y="3.5" width="1.5" height="4" rx="0.5" fill="#000"/>
+        </svg>
+      </div>
+    </div>
+  );
+}
 
 // SAR / Dirham PUA glyph (from Noontree font, used in Figma at )
 const SAR = '';
@@ -194,7 +317,7 @@ function DeliveryInstructions() {
           onClick={() => setTogether((v) => !v)}
         >
           <div className="cart-instr__top">
-            <span className="cart-instr__icon" aria-hidden>📦</span>
+            <span className="cart-instr__icon" aria-hidden><BoxStackIcon /></span>
             <span className={`cart-checkbox${together ? ' cart-checkbox--on' : ''}`}>
               {together && <span className="cart-checkbox__tick">✓</span>}
             </span>
@@ -207,7 +330,7 @@ function DeliveryInstructions() {
           onClick={() => setDoor((v) => !v)}
         >
           <div className="cart-instr__top">
-            <span className="cart-instr__icon" aria-hidden>🚪</span>
+            <span className="cart-instr__icon" aria-hidden><DoorIcon /></span>
             <span className={`cart-checkbox${door ? ' cart-checkbox--on' : ''}`}>
               {door && <span className="cart-checkbox__tick">✓</span>}
             </span>
@@ -261,18 +384,6 @@ function PointsVouchers() {
 }
 
 /* ── Pay With ─────────────────────────────────────────────────────────────── */
-function NoonOneInline() {
-  return (
-    <span className="cart-noon-one-inline">
-      <span className="cart-noon-one-inline__crop">
-        <img src={IMG_NOON_ONE_LOGO} alt="" />
-        <img src={IMG_NOON_ONE_LOGO_B} alt="" />
-        <img src={IMG_NOON_ONE_LOGO_C} alt="" />
-      </span>
-    </span>
-  );
-}
-
 function PayWith() {
   const [credits, setCredits] = useState(true);
   const [selected, setSelected] = useState('card');
@@ -305,8 +416,8 @@ function PayWith() {
           className={`cart-pay${selected === 'tabby' ? ' cart-pay--checked' : ''}`}
           onClick={() => setSelected('tabby')}
         >
-          <span className="cart-pay__brand cart-pay__brand--tabby">
-            <img src={IMG_TABBY} alt="Tabby" />
+          <span className="cart-pay__brand cart-pay__brand--svg">
+            <TabbyLogo />
           </span>
           <span className="cart-pay__info">
             <span className="cart-pay__title-row">
@@ -323,8 +434,8 @@ function PayWith() {
           className={`cart-pay${selected === 'tamara' ? ' cart-pay--checked' : ''}`}
           onClick={() => setSelected('tamara')}
         >
-          <span className="cart-pay__brand cart-pay__brand--tamara">
-            <img src={IMG_TAMARA} alt="Tamara" />
+          <span className="cart-pay__brand cart-pay__brand--svg">
+            <TamaraLogo />
           </span>
           <span className="cart-pay__info">
             <span className="cart-pay__name">Tamara</span>
@@ -338,8 +449,8 @@ function PayWith() {
           className={`cart-pay${selected === 'apple' ? ' cart-pay--checked' : ''}`}
           onClick={() => setSelected('apple')}
         >
-          <span className="cart-pay__brand cart-pay__brand--apple">
-            <img src={IMG_APPLEPAY} alt="Apple Pay" />
+          <span className="cart-pay__brand cart-pay__brand--svg">
+            <ApplePayLogo />
           </span>
           <span className="cart-pay__info">
             <span className="cart-pay__name">Apple Pay</span>
@@ -355,7 +466,9 @@ function PayWith() {
             className="cart-pay cart-pay--expanded"
             onClick={() => setSelected('card')}
           >
-            <span className="cart-pay__brand cart-pay__brand--cardplaceholder">CARD</span>
+            <span className="cart-pay__brand cart-pay__brand--svg">
+              <CardPlaceholderLogo />
+            </span>
             <span className="cart-pay__info">
               <span className="cart-pay__name">Debit/Credit Card</span>
             </span>
@@ -416,8 +529,8 @@ function PayWith() {
           className={`cart-pay${selected === 'cod' ? ' cart-pay--checked' : ''}`}
           onClick={() => setSelected('cod')}
         >
-          <span className="cart-pay__brand cart-pay__brand--cash">
-            <img src={IMG_CASH} alt="" />
+          <span className="cart-pay__brand cart-pay__brand--svg">
+            <CashLogo />
           </span>
           <span className="cart-pay__info">
             <span className="cart-pay__name">Cash on Delivery</span>
@@ -447,20 +560,20 @@ function PaymentSummary() {
           <div className="cart-summary__row">
             <span className="cart-summary__label cart-summary__label--underline">Delivery fee</span>
             <span className="cart-summary__right">
-              <span className="cart-summary__free">Free with</span>
-              <NoonOneInline />
+              <span className="cart-summary__free-text">Free with</span>
+              <NoonOnePill />
               <span className="cart-summary__amt">{SAR}7.00</span>
             </span>
           </div>
 
-          <img src={IMG_DIVIDER} alt="" className="cart-summary__divider" aria-hidden />
+          <div className="cart-summary__divider" aria-hidden />
 
           <div className="cart-summary__row">
             <span className="cart-summary__label">Coupon discount</span>
             <span className="cart-summary__amt">– {SAR}2.00</span>
           </div>
 
-          <img src={IMG_DIVIDER} alt="" className="cart-summary__divider" aria-hidden />
+          <div className="cart-summary__divider" aria-hidden />
 
           <div className="cart-summary__row cart-summary__row--total">
             <span>Total</span>
@@ -569,18 +682,22 @@ export default function CartPage() {
     <PageTransition>
       <div className="cart-page">
         <header className="cart-header">
-          <button type="button" aria-label="Back" className="cart-header__back">
-            <ChevronLeft size={20} color="var(--grey-900)" />
-          </button>
-          <button type="button" className="cart-header__addr">
-            <span className="cart-header__addr-row">
-              <span className="cart-header__addr-label">Delivering to Home</span>
-              <ChevronDown size={14} color="var(--grey-900)" />
-            </span>
-            <span className="cart-header__addr-text">
-              Villa 52, Springville, K. VGP Layout, Mh…
-            </span>
-          </button>
+          <StatusBar />
+          <div className="cart-header__row">
+            <button type="button" aria-label="Back" className="cart-header__back">
+              <ChevronLeft size={18} color="var(--grey-900)" />
+            </button>
+            <div className="cart-header__center">
+              <span className="cart-header__addr-row">
+                <span className="cart-header__addr-label">Delivering to Home</span>
+                <ChevronDown size={12} color="var(--grey-900)" />
+              </span>
+              <span className="cart-header__addr-text">
+                Villa 52, Springville, K. VGP Layout, Mh…
+              </span>
+            </div>
+            <span className="cart-header__spacer" aria-hidden />
+          </div>
         </header>
 
         <div className="cart-scroll">
